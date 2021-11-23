@@ -1,5 +1,5 @@
 locals {
-  cicd_cloudrun_sa_roles = ["roles/run.admin", "roles/iam.serviceAccountUser", "roles/storage.admin"]
+  cicd_cloudrun_sa_roles = ["roles/run.admin", "roles/storage.admin"]
 }
 
 resource "google_service_account" "cicd_cloudrun_sa" {
