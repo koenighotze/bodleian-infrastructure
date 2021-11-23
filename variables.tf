@@ -1,30 +1,30 @@
 variable "region" {
-  type = string
+  type    = string
   default = "europe-west1"
 }
 
 variable "zone" {
-  type = string
+  type    = string
   default = "europe-west1-c"
 }
 
 variable "project_id" {
-  type = string
+  type      = string
   sensitive = true
 }
 
 variable "codacy_api_token" {
-  type = string
+  type      = string
   sensitive = true
 }
 
 variable "docker_registry_username" {
-  type = string
+  type      = string
   sensitive = true
 }
 
 variable "docker_registry_token" {
-  type = string
+  type      = string
   sensitive = true
 }
 
