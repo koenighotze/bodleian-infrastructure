@@ -31,5 +31,4 @@ override.tf.json
 *.plan
 pkg/
 .idea
-.terraform.lock.hcl
 terraform.tfvars
