@@ -1,6 +1,6 @@
 terraform {
   backend "gcs" {
-    bucket  = "koenighotze"
-    prefix  = "terraform/bodleian/state"
+    bucket = "koenighotze"
+    prefix = "terraform/bodleian/state"
   }
 }
