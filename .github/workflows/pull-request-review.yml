@@ -40,6 +40,12 @@ jobs:
       - name: Checking out
         uses: actions/checkout@v2
 
+      - name: Setting up GCP environment
+        uses: google-github-actions/setup-gcloud@v0.2.1
+        with:
+          project_id: "${{ secrets.BODLEIAN_PROJECT_ID }}"
+          service_account_key: "${{ secrets.GCR_SA_KEY }}"
+
       - name: Reviewing Terraform files
         uses: reviewdog/action-tflint@v1.13.0
         with:
