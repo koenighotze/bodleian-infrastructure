@@ -22,6 +22,7 @@ jobs:
       - name: Terraform Apply  
         run: terraform apply --auto-approve
         env:
+          GITHUB_OWNER: koenighotze
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
           TF_VAR_codacy_api_token: "${{ secrets.BODLEIAN_CODACY_API_TOKEN }}"
           TF_VAR_project_id: "${{ secrets.BODLEIAN_PROJECT_ID }}"
