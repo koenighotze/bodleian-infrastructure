@@ -1,10 +1,10 @@
-name: Apply
+name: Destroy
 
 on:
   workflow_dispatch:
 
 jobs:
-  apply:
+  destroy:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
@@ -19,8 +19,8 @@ jobs:
         uses: hashicorp/setup-terraform@v1
       - name: Init  
         run: terraform init   
-      - name: Apply  
-        run: terraform apply --auto-approve
+      - name: Destroy  
+        run: terraform destroy --auto-approve
         env:
           GITHUB_OWNER: koenighotze
           GITHUB_TOKEN: "${{ secrets.ADMIN_GITHUB_TOKEN }}"
