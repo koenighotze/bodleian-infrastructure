@@ -1,21 +1,3 @@
-variable "region" {
-  type    = string
-  default = "europe-west1"
-  description = "The GCP region"
-}
-
-variable "zone" {
-  type    = string
-  default = "europe-west1-c"
-  description = "The GCP zone"
-}
-
-variable "project_id" {
-  type      = string
-  sensitive = true
-  description = "The GCP project id"
-}
-
 variable "codacy_api_token" {
   type      = string
   sensitive = true
@@ -32,4 +14,19 @@ variable "docker_registry_token" {
   type      = string
   sensitive = true
   description = "The API token for uploading images"
+}
+
+variable "target_repository_name" {
+  type = string
+  description = "The full name of the repository that is setup"
+}
+
+variable "gcp_project_id" {
+  type = string
+  description = "The ID of the GCP project as the deployment target"
+}
+
+variable "gcp_sa_private_key" {
+  type = string
+  description = "The private key of the GCP service account used for deployment"
 }

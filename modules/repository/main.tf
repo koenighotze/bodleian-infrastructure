@@ -1,13 +1,13 @@
 resource "github_actions_secret" "cicd_cloudrun_sa_secret" {
   repository      = data.github_repository.target.id
   secret_name     = "GCP_SA_KEY"
-  plaintext_value = google_service_account_key.cicd_cloudrun_sa_key.private_key
+  plaintext_value = var.gcp_sa_private_key
 }
 
 resource "github_actions_secret" "gcp_projectid_secret" {
   repository      = data.github_repository.target.id
   secret_name     = "GCP_PROJECT_ID"
-  plaintext_value = data.google_project.project.project_id
+  plaintext_value = var.gcp_project_id
 }
 
 resource "github_actions_secret" "docker_registry_token" {
