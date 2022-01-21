@@ -1,4 +1,12 @@
-module "bodleian-service-repository" {
+module "bodleian_service_repository_deployer_sa" {
+  source = "./modules/deployer-service-account"
+
+  name           = "bodleian-service"
+  gcp_project_id = var.project_id
+}
+
+
+module "bodleian_service_repository" {
   source = "./modules/repository"
 
   target_repository_name   = "koenighotze/bodleian"
@@ -6,5 +14,5 @@ module "bodleian-service-repository" {
   docker_registry_username = var.docker_registry_username
   docker_registry_token    = var.docker_registry_token
   gcp_project_id           = var.project_id
-  gcp_sa_private_key       = google_service_account_key.cicd_cloudrun_sa_key.private_key
+  gcp_sa_private_key       = module.bodleian_service_repository_deployer_sa.service_account_private_key.private_key
 }
