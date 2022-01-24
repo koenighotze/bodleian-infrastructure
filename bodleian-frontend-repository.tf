@@ -9,7 +9,7 @@ module "bodleian_frontend_repository_deployer_sa" {
 module "bodleian_frontend_repository" {
   source = "./modules/repository"
 
-  target_repository_name   = "koenighotze/bodleian"
+  target_repository_name   = "koenighotze/bodleian-frontend"
   codacy_api_token         = var.codacy_api_token
   docker_registry_username = var.docker_registry_username
   docker_registry_token    = var.docker_registry_token
